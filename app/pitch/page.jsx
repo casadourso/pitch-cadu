@@ -614,6 +614,7 @@ export default function PitchDeck() {
 
         @media (max-width: 900px){
           .pitch-grid{grid-template-columns:1fr !important;}
+          .pitch-grid > *{min-width:0;}
           .slide-section{min-height:auto !important;padding:84px 16px 52px 16px !important;}
           .side-nav{display:none !important;}
           .top-nav{height:58px !important;padding:0 14px !important;}
@@ -628,6 +629,7 @@ export default function PitchDeck() {
         @media (max-width: 640px){
           .slide-section h2{font-size:clamp(28px,9vw,40px) !important;}
           .slide-section p{font-size:14px !important;line-height:1.65 !important;}
+          .s4-stats-grid{grid-template-columns:1fr !important;}
           .mockup-sidebar{display:none !important;}
           .mockup-shell{border-radius:12px !important;}
           .pitch-footer-actions > div{width:100%;justify-content:center;}
@@ -648,7 +650,7 @@ export default function PitchDeck() {
           <img
             src="/Horizontal.png"
             alt="Casa do Urso"
-            style={{ height: "fit-content", width: "100px", display: "block" }}
+            style={{ height: "18px", width: "100px", display: "block" }}
           />
           <span style={{ fontSize: 11, background: C.orangeLight, color: C.orange, padding: "2px 10px", borderRadius: 20, fontWeight: 700, border: `1px solid ${C.orangeMid}` }}>Pitch</span>
         </div>
@@ -816,7 +818,7 @@ export default function PitchDeck() {
               </p>
             </Reveal>
             <Reveal delay={0.15}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+              <div className="s4-stats-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
                 <StatCard value={30} prefix="R$" suffix="k" label="MRR atual" sub="clínica operando em SP" color={C.orange} />
                 <StatCard value={70} prefix="R$" suffix="k" label="Projeção 3m" sub="crescimento validado" color={C.teal} />
                 <StatCard value={600} suffix="k+" label="Crianças com TEA" sub="mercado endereçável BR" color={C.blue} />
