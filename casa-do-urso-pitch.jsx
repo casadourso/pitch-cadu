@@ -9,7 +9,7 @@ import {
   Network, ScanLine, ChevronRight
 } from "lucide-react";
 
-// ─── Color tokens — identical to platform ─────────────────────────────────────
+// Color tokens identical to platform
 const C = {
   orange:      "#F07030",
   orangeLight: "#FDF0E8",
@@ -32,7 +32,7 @@ const SLIDES = [
   { id: "s4", num: "04", label: "Tração & Visão",     color: C.blue   },
 ];
 
-// ─── Intersection Observer hook ───────────────────────────────────────────────
+// Intersection Observer hook
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -59,7 +59,7 @@ function Reveal({ children, delay = 0 }) {
   );
 }
 
-// ─── Active slide tracker ─────────────────────────────────────────────────────
+// Active slide tracker
 function useActiveSlide() {
   const [active, setActive] = useState(0);
   useEffect(() => {
@@ -78,7 +78,7 @@ function useActiveSlide() {
   return active;
 }
 
-// ─── Animated counter ─────────────────────────────────────────────────────────
+// Animated counter
 function Counter({ to, prefix = "", suffix = "", duration = 1600 }) {
   const [val, setVal] = useState(0);
   const ref = useRef(null);
@@ -103,7 +103,7 @@ function Counter({ to, prefix = "", suffix = "", duration = 1600 }) {
   return <span ref={ref}>{prefix}{val.toLocaleString("pt-BR")}{suffix}</span>;
 }
 
-// ─── MockupShell — identical to platform ─────────────────────────────────────
+// MockupShell identical to platform
 function MockupShell({ children, title }) {
   return (
     <div style={{
@@ -126,7 +126,7 @@ function MockupShell({ children, title }) {
   );
 }
 
-// ─── Sidebar — identical to platform ─────────────────────────────────────────
+// Sidebar identical to platform
 const SIDEBAR_ICONS = [LayoutDashboard, Clock, ClipboardList, Image, BookOpen, MessageCircle, GraduationCap];
 const SIDEBAR_LABELS = ["Dashboard","Sessões","Relatórios","Mídia","PEI","Mensagens","Escola"];
 
@@ -156,7 +156,7 @@ function Sidebar({ active }) {
   );
 }
 
-// ─── Slide wrapper ────────────────────────────────────────────────────────────
+// Slide wrapper
 function Slide({ id, bg, children }) {
   return (
     <section id={id} style={{
@@ -165,14 +165,13 @@ function Slide({ id, bg, children }) {
       display: "flex", alignItems: "center", justifyContent: "center",
       padding: "88px 32px 80px 72px",
       position: "relative", overflow: "hidden",
-      scrollSnapAlign: "start",
     }}>
       {children}
     </section>
   );
 }
 
-// ─── Slide label — same visual language as platform's FeatureLabel ─────────────
+// Slide label same visual language as platform's FeatureLabel
 function SlideLabel({ num, label, color }) {
   return (
     <div style={{
@@ -186,7 +185,7 @@ function SlideLabel({ num, label, color }) {
   );
 }
 
-// ─── Bullet row — same style as platform's FRow ───────────────────────────────
+// Bullet row same style as platform's FRow
 function Bullet({ text, color, Icon }) {
   return (
     <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 14 }}>
@@ -205,7 +204,7 @@ function Bullet({ text, color, Icon }) {
   );
 }
 
-// ─── Stat card ────────────────────────────────────────────────────────────────
+// Stat card
 function StatCard({ value, label, sub, color, prefix = "", suffix = "", animate = true }) {
   return (
     <div style={{
@@ -223,7 +222,7 @@ function StatCard({ value, label, sub, color, prefix = "", suffix = "", animate 
   );
 }
 
-// ─── Problem mockup ───────────────────────────────────────────────────────────
+// Problem mockup
 function ProblemMockup() {
   const actors = [
     { label: "WhatsApp",  Icon: MessageCircle, color: "#25D366", pos: { top: "14%", left: "12%" } },
@@ -287,7 +286,7 @@ function ProblemMockup() {
   );
 }
 
-// ─── Solution mockup ──────────────────────────────────────────────────────────
+// Solution mockup
 function SolutionMockup() {
   const spokes = [
     { label: "Clínica",    sub: "terapeutas",  color: C.orange, Icon: Building2,    angle: -90 },
@@ -298,7 +297,7 @@ function SolutionMockup() {
   const R = 108;
   const cx = 160, cy = 148;
   return (
-    <MockupShell title="Casa do Urso Platform — Ecossistema">
+    <MockupShell title="Casa do Urso Platform Ecossistema">
       <div style={{ padding: 20, height: 310, position: "relative" }}>
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
           <circle cx={cx} cy={cy} r={R} fill="none" stroke={`${C.orange}15`} strokeWidth="1" strokeDasharray="5,6" />
@@ -356,7 +355,7 @@ function SolutionMockup() {
   );
 }
 
-// ─── AI Mockup ────────────────────────────────────────────────────────────────
+// AI Mockup
 function AIMockup() {
   const inputs = [
     { label: "Sessão terapêutica", Icon: Clock,        color: C.orange },
@@ -371,7 +370,7 @@ function AIMockup() {
     { label: "PEI adaptado",         Icon: Target,        color: C.purple },
   ];
   return (
-    <MockupShell title="Casa AI Engine — Fluxo de dados clínicos">
+    <MockupShell title="Casa AI Engine Fluxo de dados clínicos">
       <div style={{ padding: 20, height: 310 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 64px 1fr", gap: 10, height: "100%", alignItems: "center" }}>
           {/* Inputs */}
@@ -427,7 +426,7 @@ function AIMockup() {
   );
 }
 
-// ─── Traction mockup ──────────────────────────────────────────────────────────
+// Traction mockup
 function TractionMockup() {
   const milestones = [
     { label: "Clínica aberta em São Paulo",          done: true,   active: false },
@@ -438,7 +437,7 @@ function TractionMockup() {
   ];
   const bars = [18, 22, 25, 28, 30];
   return (
-    <MockupShell title="Casa do Urso — Tração & Roadmap">
+    <MockupShell title="Casa do Urso Tração & Roadmap">
       <div style={{ display: "flex", height: 310 }}>
         <Sidebar active={0} />
         <div style={{ flex: 1, padding: 14, overflow: "hidden" }}>
@@ -446,7 +445,7 @@ function TractionMockup() {
           <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
             {[
               { val: "R$30k", label: "MRR atual",     color: C.orange },
-              { val: "R$70k", label: "Projeção 12m",  color: C.teal   },
+              { val: "R$70k", label: "Projeção 3m",  color: C.teal   },
               { val: "MVP",   label: "Em construção",  color: C.blue   },
             ].map((s, i) => (
               <div key={i} style={{ flex: 1, background: C.cream, borderRadius: 10, padding: "10px 12px", borderTop: `3px solid ${s.color}` }}>
@@ -495,7 +494,7 @@ function TractionMockup() {
   );
 }
 
-// ─── Side navigation ──────────────────────────────────────────────────────────
+// Side navigation
 function SideNav({ active }) {
   return (
     <nav style={{
@@ -530,14 +529,14 @@ function SideNav({ active }) {
   );
 }
 
-// ─── Grid layout — same as platform ──────────────────────────────────────────
+// Grid layout same as platform
 const grid = {
   maxWidth: 1100, width: "100%",
   display: "grid", gridTemplateColumns: "1fr 1fr",
   gap: 60, alignItems: "center",
 };
 
-// ─── Main component ───────────────────────────────────────────────────────────
+// Main component
 export default function PitchDeck() {
   const [scrollY, setScrollY] = useState(0);
   const active = useActiveSlide();
@@ -553,7 +552,7 @@ export default function PitchDeck() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
         *{box-sizing:border-box;margin:0;padding:0;}
-        html{scroll-snap-type:y mandatory;overflow-y:scroll;scroll-behavior:smooth;}
+        html{scroll-snap-type:none;overflow-y:scroll;scroll-behavior:smooth;}
         ::-webkit-scrollbar{width:4px;}
         ::-webkit-scrollbar-thumb{background:${C.orange};border-radius:2px;}
         @keyframes bf{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -562,7 +561,7 @@ export default function PitchDeck() {
         .na:hover{color:${C.orange};}
       `}</style>
 
-      {/* ─── Navbar — identical to platform ─── */}
+      {/* Navbar identical to platform */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
         background: scrollY > 40 ? "rgba(253,250,246,0.95)" : "transparent",
@@ -588,16 +587,19 @@ export default function PitchDeck() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <span style={{ fontSize: 11, color: C.gray }}>Confidencial · 2025</span>
-          <div style={{ background: C.orange, color: "white", fontSize: 13, fontWeight: 600, padding: "8px 20px", borderRadius: 30, cursor: "pointer" }}>
+          <a
+            href="mailto:contato@clinicacasadourso.com.br"
+            style={{ background: C.orange, color: "white", fontSize: 13, fontWeight: 600, padding: "8px 20px", borderRadius: 30, cursor: "pointer", textDecoration: "none", display: "inline-block" }}
+          >
             Falar com a equipe
-          </div>
+          </a>
         </div>
       </nav>
 
       <SideNav active={active} />
 
       {/* ═══════════════════════════════════════════════════════
-          SLIDE 01 — O PROBLEMA
+          SLIDE 01 O PROBLEMA
       ═══════════════════════════════════════════════════════ */}
       <Slide id="s1" bg={C.cream}>
         <div style={{ position: "absolute", top: -60, right: -60, width: 400, height: 400, background: `radial-gradient(circle, ${C.orangeMid}70, transparent 70%)`, pointerEvents: "none" }} />
@@ -633,7 +635,7 @@ export default function PitchDeck() {
       </Slide>
 
       {/* ═══════════════════════════════════════════════════════
-          SLIDE 02 — A SOLUÇÃO
+          SLIDE 02 A SOLUÇÃO
       ═══════════════════════════════════════════════════════ */}
       <Slide id="s2" bg={C.white}>
         <div style={{ position: "absolute", top: "50%", right: -100, width: 500, height: 500, background: `radial-gradient(circle, ${C.orangeMid}50, transparent 70%)`, transform: "translateY(-50%)", pointerEvents: "none" }} />
@@ -648,7 +650,7 @@ export default function PitchDeck() {
                 equipe de cuidados.
               </h2>
               <p style={{ fontSize: 15, color: C.gray, lineHeight: 1.75, marginBottom: 28, maxWidth: 420 }}>
-                Casa do Urso Platform cria um espaço compartilhado onde clínica, escola e família ficam alinhados em tempo real — com a criança sempre no centro.
+                Casa do Urso Platform cria um espaço compartilhado onde clínica, escola e família ficam alinhados em tempo real com a criança sempre no centro.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
@@ -672,7 +674,7 @@ export default function PitchDeck() {
       </Slide>
 
       {/* ═══════════════════════════════════════════════════════
-          SLIDE 03 — INTELIGÊNCIA ARTIFICIAL
+          SLIDE 03 INTELIGÊNCIA ARTIFICIAL
       ═══════════════════════════════════════════════════════ */}
       <Slide id="s3" bg={C.cream}>
         <div style={{ position: "absolute", bottom: -80, left: -80, width: 400, height: 400, background: `radial-gradient(circle, ${C.teal}12, transparent 70%)`, pointerEvents: "none" }} />
@@ -687,7 +689,7 @@ export default function PitchDeck() {
                 terapêutica.
               </h2>
               <p style={{ fontSize: 15, color: C.gray, lineHeight: 1.75, marginBottom: 28, maxWidth: 420 }}>
-                A IA não substitui o terapeuta — ela amplifica sua capacidade de decisão. Cada sessão alimenta um modelo de evolução individual da criança.
+                A IA não substitui o terapeuta ela amplifica sua capacidade de decisão. Cada sessão alimenta um modelo de evolução individual da criança.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -719,7 +721,7 @@ export default function PitchDeck() {
       </Slide>
 
       {/* ═══════════════════════════════════════════════════════
-          SLIDE 04 — TRAÇÃO & VISÃO
+          SLIDE 04 TRAÇÃO & VISÃO
       ═══════════════════════════════════════════════════════ */}
       <Slide id="s4" bg={C.orangeLight}>
         <div style={{ position: "absolute", top: -80, left: "25%", width: 500, height: 500, background: `radial-gradient(circle, ${C.orangeMid}80, transparent 70%)`, pointerEvents: "none" }} />
@@ -734,15 +736,15 @@ export default function PitchDeck() {
                 Escalamos um setor.
               </h2>
               <p style={{ fontSize: 15, color: C.gray, lineHeight: 1.75, marginBottom: 24, maxWidth: 420 }}>
-                A clínica em São Paulo é o laboratório vivo do produto. Entendemos o problema de dentro para fora — e já provamos que há demanda.
+                A clínica em São Paulo é o laboratório vivo do produto. Entendemos o problema de dentro para fora e já provamos que há demanda.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
                 <StatCard value={30} prefix="R$" suffix="k" label="MRR atual" sub="clínica operando em SP" color={C.orange} />
-                <StatCard value={70} prefix="R$" suffix="k" label="Projeção 12m" sub="crescimento validado" color={C.teal} />
+                <StatCard value={70} prefix="R$" suffix="k" label="Projeção 3m" sub="crescimento validado" color={C.teal} />
                 <StatCard value={600} suffix="k+" label="Crianças com TEA" sub="mercado endereçável BR" color={C.blue} />
-                <StatCard value={0} prefix="" suffix="↗" label="MVP em construção" sub="validação em campo" color={C.purple} animate={false} />
+                <StatCard value={1} prefix="" suffix="↗" label="MVP em construção" sub="validação em campo" color={C.purple} animate={false} />
               </div>
             </Reveal>
             <Reveal delay={0.2}>
@@ -757,12 +759,15 @@ export default function PitchDeck() {
         </div>
       </Slide>
 
-      {/* ─── Footer — same as platform ─── */}
+      {/* Footer same as platform */}
       <footer style={{ background: C.dark, padding: "40px 60px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div className="bf" style={{ width: 36, height: 36, background: C.orange, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <PawPrint size={18} color="white" strokeWidth={2.5} />
-          </div>
+          <img
+            className="bf"
+            src="/Urso.png"
+            alt="Urso"
+            style={{ width: 36, height: 36, borderRadius: 10, display: "block", objectFit: "contain" }}
+          />
           <div>
             <div style={{ fontFamily: "'DM Serif Display', serif", fontSize: 16, fontWeight: 700, color: C.white }}>Casa do Urso</div>
             <div style={{ fontSize: 11, color: `${C.white}50` }}>A infraestrutura do cuidado em neurodesenvolvimento.</div>
@@ -775,12 +780,12 @@ export default function PitchDeck() {
           </div>
         </div>
         <div style={{ display: "flex", gap: 12 }}>
-          <div style={{ background: C.orange, color: "white", fontSize: 14, fontWeight: 600, padding: "13px 28px", borderRadius: 40, cursor: "pointer", boxShadow: `0 8px 24px ${C.orange}50`, display: "flex", alignItems: "center", gap: 8 }}>
+          <a
+            href="mailto:contato@clinicacasadourso.com.br"
+            style={{ background: C.orange, color: "white", fontSize: 14, fontWeight: 600, padding: "13px 28px", borderRadius: 40, cursor: "pointer", boxShadow: `0 8px 24px ${C.orange}50`, display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}
+          >
             Falar com a equipe <ArrowRight size={15} color="white" />
-          </div>
-          <div style={{ color: C.white, fontSize: 14, padding: "13px 24px", borderRadius: 40, cursor: "pointer", border: `1.5px solid ${C.white}20` }}>
-            Ver produto
-          </div>
+          </a>
         </div>
       </footer>
     </div>
