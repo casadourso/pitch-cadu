@@ -480,15 +480,55 @@ function TractionMockup() {
         background: "transparent",
         borderRadius: 16,
         boxShadow: "none",
-        overflow: "hidden",
+        overflow: "visible",
         border: "none",
       }}
     >
-      <img
-        src="/img-2.png"
-        alt="Mockup tração e roadmap Casa do Urso"
-        style={{ display: "block", width: "600px", height: "auto", marginLeft: "-29px", marginRight: "-29px" }}
-      />
+      <div className="traction-wrap" style={{ position: "relative", display: "inline-block" }}>
+        <img
+          src="/img-2.png"
+          alt="Mockup tração e roadmap Casa do Urso"
+          style={{ display: "block", width: "600px", height: "auto", marginLeft: "-29px", marginRight: "-29px" }}
+        />
+
+        <img
+          src="/coracao.png"
+          alt="Coracao decorativo"
+          className="traction-float traction-heart"
+          style={{
+            position: "absolute",
+            top: -28,
+            left: -34,
+            marginLeft: 133,
+            marginRight: 133,
+            marginTop: 139,
+            marginBottom: 139,
+            width: 800,
+            height: "auto",
+            pointerEvents: "none",
+            zIndex: 2,
+          }}
+        />
+
+        <img
+          src="/Ursinho.png"
+          alt="Ursinho decorativo"
+          className="traction-float traction-bear"
+          style={{
+            position: "absolute",
+            right: -24,
+            bottom: -14,
+            marginTop: -118,
+            marginBottom: -118,
+            marginLeft: 134,
+            marginRight: 134,
+            width: 900,
+            height: "auto",
+            pointerEvents: "none",
+            zIndex: 2,
+          }}
+        />
+      </div>
     </div>
   );
 }
@@ -556,7 +596,11 @@ export default function PitchDeck() {
         ::-webkit-scrollbar-thumb{background:${C.orange};border-radius:2px;}
         @keyframes bf{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         @keyframes svgAppear{0%{opacity:0;transform:translateY(10px) scale(0.98)}100%{opacity:1;transform:translateY(0) scale(1)}}
+        @keyframes tractionFloatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes tractionFloatB{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         .bf{animation:bf 4s ease-in-out infinite;}
+        .traction-float{animation:tractionFloatA 3.8s ease-in-out infinite;}
+        .traction-bear{animation-name:tractionFloatB;animation-duration:4.4s;animation-delay:.2s;}
         .na{font-size:13px;color:${C.gray};text-decoration:none;font-weight:500;transition:color .2s;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
         .na:hover{color:${C.orange};}
         .pitch-grid{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;column-gap:60px;row-gap:0;align-items:center;}
