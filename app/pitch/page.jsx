@@ -769,6 +769,7 @@ export default function PitchDeck() {
             </Reveal>
             <Reveal delay={0.1}>
               <Bullet color={C.teal} Icon={ClipboardList}  text="Relatórios automáticos gerados a partir de notas de sessão." />
+              <Bullet color={C.teal} Icon={CalendarDays}    text="Agenda inteligente com IA para otimizar encaixes, frequência e prioridade de atendimento." />
               <Bullet color={C.teal} Icon={Activity}        text="Detecção de padrões de desenvolvimento ao longo do tempo." />
               <Bullet color={C.teal} Icon={Bell}            text="Alertas para terapeutas sobre regressões ou metas estagnadas." />
               <Bullet color={C.teal} Icon={Target}          text="PEI adaptado dinamicamente com base na evolução real." />
